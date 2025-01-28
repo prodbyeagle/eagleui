@@ -26,11 +26,11 @@ import React from 'react';
 import { Button } from '@prodbyeagle/preagle-ui';
 
 const App = () => {
-    return (
-        <div>
-            <Button variant="primary" size="md" content="Click Me" />
-        </div>
-    );
+	return (
+		<div>
+			<Button variant='primary' size='md' content='Click Me' />
+		</div>
+	);
 };
 
 export default App;
@@ -45,7 +45,7 @@ A customizable button component with different variants and sizes.
 ```tsx
 import { Button } from '@prodbyeagle/preagle-ui';
 
-<Button variant="primary" size="md" content="Click Me" />;
+<Button variant='primary' size='md' content='Click Me' />;
 ```
 
 ### Dialog
@@ -55,8 +55,8 @@ A flexible dialog component with customizable content, title, and styling.
 ```tsx
 import { Dialog } from '@prodbyeagle/preagle-ui';
 
-<Dialog isOpen={true} onClose={() => {}} title="Dialog Title">
-    <p>Dialog Content</p>
+<Dialog isOpen={true} onClose={() => {}} title='Dialog Title'>
+	<p>Dialog Content</p>
 </Dialog>;
 ```
 
@@ -67,7 +67,7 @@ A customizable input component with optional label, icon, and error message.
 ```tsx
 import { Input } from '@prodbyeagle/preagle-ui';
 
-<Input label="Username" placeholder="Enter your username" />;
+<Input label='Username' placeholder='Enter your username' />;
 ```
 
 ### Select
@@ -78,11 +78,11 @@ A custom dropdown select component with an accessible and modern design.
 import { Select } from '@prodbyeagle/preagle-ui';
 
 const options = [
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
+	{ value: 'option1', label: 'Option 1' },
+	{ value: 'option2', label: 'Option 2' },
 ];
 
-<Select value="option1" onChange={(value) => {}} options={options} />;
+<Select value='option1' onChange={(value) => {}} options={options} />;
 ```
 
 ## Contributing

@@ -1,3 +1,3 @@
 declare module '@prodbyeagle/preagle-ui' {
-	export * from './src/index';
+	export * from './index';
 }

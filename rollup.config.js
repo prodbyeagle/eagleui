@@ -25,10 +25,13 @@ module.exports = defineConfig({
 		},
 	],
 	plugins: [
-		peerDepsExternal(), // Workaround for type compatibility
+		peerDepsExternal(),
 		resolve(),
 		commonjs(),
-		typescript({ useTsconfigDeclarationDir: true }),
+		typescript({
+			useTsconfigDeclarationDir: true,
+			tsconfig: './tsconfig.json',
+		}),
 		postcss({
 			extract: true,
 			minimize: true,

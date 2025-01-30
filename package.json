@@ -1,44 +1,37 @@
 {
 	"name": "@prodbyeagle/preagle-ui",
 	"version": "0.2.0",
-	"description": "@prodbyeagle's UI LIBRARY",
-	"main": "dist/index.cjs.js",
-	"module": "dist/index.esm.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist"
-	],
-	"scripts": {
-		"build": "rollup -c",
-		"start": "npx prettier . --write",
-		"preversion": "npm run build"
-	},
 	"keywords": [
 		"ui",
 		"library",
 		"components"
 	],
 	"author": "prodbyeagle",
+	"description": "A comprehensive UI library by @prodbyeagle",
+	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/types/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "npm start && tsc",
+		"start": "npx prettier . --write",
+		"preversion": "npm run build"
+	},
 	"peerDependencies": {
 		"react": "latest",
 		"react-dom": "latest"
 	},
 	"devDependencies": {
-		"@rollup/plugin-commonjs": "latest",
-		"@rollup/plugin-node-resolve": "latest",
 		"@types/node": "latest",
 		"@types/react": "latest",
-		"@types/rollup-plugin-peer-deps-external": "^2.2.5",
 		"prettier": "latest",
-		"rollup": "latest",
-		"rollup-plugin-peer-deps-external": "latest",
-		"rollup-plugin-postcss": "latest",
-		"rollup-plugin-typescript2": "latest",
 		"typescript": "latest"
 	},
 	"dependencies": {
 		"@tailwindcss/postcss": "latest",
-		"date-fns": "^4.1.0",
+		"date-fns": "latest",
 		"lucide-react": "latest",
 		"postcss": "latest",
 		"tailwindcss": "latest"

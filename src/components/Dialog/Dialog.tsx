@@ -1,7 +1,7 @@
-import React, { useEffect, useState, ReactNode, JSX } from 'react';
+import React, { useEffect, useState, JSX } from 'react';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import type { DialogProps } from 'eagleui';
+import type { DialogProps } from './Dialog.types';
 
 export const Dialog: React.FC<DialogProps> = ({
 	isOpen,

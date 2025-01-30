@@ -11,10 +11,11 @@
 		"strict": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
+		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["src/*"]
 		}
 	},
-	"include": ["src/**/*", "index.d.ts"],
+	"include": ["src/**/*", "src/eagleui.d.ts"],
 	"exclude": ["node_modules", "dist"]
 }

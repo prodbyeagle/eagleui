@@ -1,5 +1,5 @@
 import React from 'react';
-import type { InputProps } from 'eagleui';
+import type { InputProps } from './Input.types';
 
 /**
  * A customizable input component with optional label, icon, and error message.

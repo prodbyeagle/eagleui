@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import type { ButtonProps } from 'eagleui';
+import type { ButtonProps } from './Button.types';
 
 export const Button: React.FC<ButtonProps> = ({
 	content,
@@ -13,7 +13,7 @@ export const Button: React.FC<ButtonProps> = ({
 	...props
 }) => {
 	const baseStyles =
-		'inline-flex h-10 items-center justify-center font-medium active:scale-95 transition-all duration-300 rounded-xl disabled:opacity-60 disabled:pointer-events-none';
+		'inline-flex h-10 items-center justify-center font-medium active:scale-95 transition-all duration-100 rounded-xl disabled:opacity-60 disabled:pointer-events-none';
 
 	const variants = {
 		primary:

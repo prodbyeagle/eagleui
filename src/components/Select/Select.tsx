@@ -1,33 +1,7 @@
 import { useState, useEffect, useRef, JSX } from 'react';
 import { ChevronDown, Check } from 'lucide-react';
-import type { SelectProps } from 'eagleui';
+import type { SelectProps } from './Select.types';
 
-/**
- * A custom dropdown Select component with an accessible and modern design.
- *
- * @template T - The type of the value used in the Select component.
- * @param {SelectProps<T>} props - Props for the Select component.
- * @returns {JSX.Element} The rendered Select component.
- *
- * @example
- * ```tsx
- * const Example = () => {
- *     const [selected, setSelected] = useState<string>('option1');
- *
- *     return (
- *         <Select
- *             value={selected}
- *             onChange={setSelected}
- *             options={[
- *                 { value: 'option1', label: 'Option 1' },
- *                 { value: 'option2', label: 'Option 2' },
- *                 { value: 'option3', label: 'Option 3' },
- *             ]}
- *         />
- *     );
- * };
- * ```
- */
 export const Select = <T extends string | number>({
 	value,
 	onChange,

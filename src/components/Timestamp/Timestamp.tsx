@@ -1,11 +1,10 @@
 'use client';
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { format, formatDistanceToNow } from 'date-fns';
-import { Clock, LucideIcon } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { TimeStampProps } from 'eagleui';
+import type { TimeStampProps } from './Timestamp.types';
 
 /**
  * A component to display a formatted timestamp with optional live updates, an icon, and extended text.

@@ -5,51 +5,7 @@ import { format, formatDistanceToNow } from 'date-fns';
 import { Clock, LucideIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-
-/**
- * Props for the TimeStamp component.
- */
-interface TimeStampProps {
-	/**
-	 * The timestamp to display, in ISO 8601 string format.
-	 */
-	timestamp: string;
-
-	/**
-	 * Additional class names for custom styling.
-	 */
-	className?: string;
-
-	/**
-	 * Whether to show the clock icon next to the timestamp. Default: `true`.
-	 */
-	showIcon?: boolean;
-
-	/**
-	 * Custom icon to display instead of the default clock. Default: `undefined`.
-	 */
-	icon?: LucideIcon;
-
-	/**
-	 * Whether to show additional text if provided. Default: `false`.
-	 */
-	extended?: boolean;
-
-	/**
-	 * Optional text to display when `extended` is enabled.
-	 */
-	text?: string;
-
-	/**
-	 * Whether the timestamp should update live (every 10 seconds). Default: `false`.
-	 */
-	live?: boolean;
-
-	/**
-	 * Whether to add a suffix (e.g., "ago"). Default: `true`.
-	 */
-	addSuffix?: boolean;
-}
+import { TimeStampProps } from 'eagleui';
 
 /**
  * A component to display a formatted timestamp with optional live updates, an icon, and extended text.

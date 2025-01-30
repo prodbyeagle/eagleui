@@ -1,13 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { LucideIcon } from 'lucide-react';
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	variant?: 'primary' | 'secondary' | 'ghost' | 'border' | 'danger';
-	size?: 'sm' | 'md' | 'lg';
-	icon?: LucideIcon;
-	content?: string;
-}
+import type { ButtonProps } from 'eagleui';
 
 export const Button: React.FC<ButtonProps> = ({
 	content,

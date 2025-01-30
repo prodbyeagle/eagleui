@@ -1,40 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, JSX } from 'react';
 import { ChevronDown, Check } from 'lucide-react';
-
-/**
- * Props for the Select component.
- * @template T - The type of the value used in the Select component.
- */
-interface SelectProps<T> {
-	/**
-	 * The currently selected value.
-	 */
-	value: T;
-
-	/**
-	 * Callback triggered when the selected value changes.
-	 *
-	 * @param value - The newly selected value.
-	 */
-	onChange: (value: T) => void;
-
-	/**
-	 * An array of options to display in the dropdown.
-	 */
-	options: { value: T; label: string }[];
-
-	/**
-	 * Additional classes for custom styling.
-	 * @default undefined
-	 */
-	className?: string;
-
-	/**
-	 * Placeholder text to display when no option is selected.
-	 * @default "Select an option"
-	 */
-	placeholder?: string;
-}
+import type { SelectProps } from 'eagleui';
 
 /**
  * A custom dropdown Select component with an accessible and modern design.
@@ -68,7 +34,7 @@ export const Select = <T extends string | number>({
 	options,
 	className = '',
 	placeholder = 'Select an option',
-}: SelectProps<T>) => {
+}: SelectProps<T>): JSX.Element => {
 	const [isOpen, setIsOpen] = useState(false);
 	const selectRef = useRef<HTMLDivElement>(null);
 

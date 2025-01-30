@@ -1,30 +1,5 @@
 import React from 'react';
-import { LucideIcon } from 'lucide-react';
-
-/**
- * Props for the Input component.
- */
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-	/**
-	 * Label text displayed above the input field.
-	 * @default undefined
-	 */
-	label?: string;
-
-	/**
-	 * Icon displayed inside the input field (on the left side).
-	 * Should be a valid Lucide React Icon.
-	 * @default undefined
-	 */
-	icon: LucideIcon;
-
-	/**
-	 * Error message displayed below the input field.
-	 * If provided, the input field will also display an error styling.
-	 * @default undefined
-	 */
-	error?: string;
-}
+import type { InputProps } from 'eagleui';
 
 /**
  * A customizable input component with optional label, icon, and error message.

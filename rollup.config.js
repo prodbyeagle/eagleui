@@ -5,7 +5,6 @@ const postcss = require('rollup-plugin-postcss');
 const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const { defineConfig } = require('rollup');
 
-// TailwindCSS Configuration
 const postcssConfig = {
 	plugins: [require('tailwindcss')],
 };

@@ -1,50 +1,8 @@
 import React, { useEffect, useState, ReactNode, JSX } from 'react';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import type { DialogProps } from 'eagleui';
 
-/**
- * Props for the Dialog component, which controls the visibility, content, and styling of a dialog dialog.
- */
-interface DialogProps {
-	/**
-	 * A boolean that determines if the dialog is open.
-	 * @default false
-	 */
-	isOpen: boolean;
-
-	/**
-	 * A function to close the dialog when triggered (e.g., by clicking the close button).
-	 */
-	onClose: () => void;
-
-	/**
-	 * The title of the dialog, displayed at the top of the dialog content.
-	 */
-	title?: string;
-
-	/**
-	 * The content displayed inside the dialog.
-	 */
-	children: ReactNode;
-
-	/**
-	 * Additional custom classes for the dialog container.
-	 */
-	className?: string;
-
-	/**
-	 * The size of the dialog shadow. This determines the intensity of the shadow effect around the dialog.
-	 */
-	shadowSize?: string;
-}
-
-/**
- * A Dialog component that provides a flexible dialog box with customizable content, title, and styling.
- * Supports opening and closing the dialog with animations, and allows closing the dialog via the Escape key or close button.
- *
- * @param {DialogProps} props - The properties for the Dialog component, including visibility, title, and content.
- * @returns {JSX.Element | null} A dialog, or null if the dialog is not open.
- */
 export const Dialog: React.FC<DialogProps> = ({
 	isOpen,
 	onClose,

@@ -1,4 +1,4 @@
-# EagleUI
+# EagleUI ( DOCS SOON! )
 
 EagleUI is a customizable and modern UI component library built with React and TailwindCSS. It provides a set of reusable components to help you build beautiful and consistent user interfaces quickly and efficiently.
 

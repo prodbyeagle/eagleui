@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { JSX, ReactNode } from 'react';
 import { cn } from '../../lib/utils';
 import type { ButtonProps } from './Button.types';
+import { Spinner } from '../Spinner/Spinner';
 
 export const Button: React.FC<ButtonProps> = ({
 	content,
 	children,
 	variant = 'primary',
 	size = 'md',
+	loading = false,
 	icon: Icon,
 	className,
 	disabled,
 	...props
-}) => {
+}: ButtonProps): JSX.Element => {
 	const baseStyles =
-		'inline-flex h-10 items-center justify-center font-medium active:scale-95 transition-all duration-100 rounded-xl disabled:opacity-60 disabled:pointer-events-none';
+		'inline-flex h-10 items-center justify-center font-medium active:scale-95 transition-all duration-300 rounded-xl disabled:opacity-60 disabled:pointer-events-none';
 
 	const variants = {
 		primary:
@@ -40,18 +42,22 @@ export const Button: React.FC<ButtonProps> = ({
 				className,
 				!content && !children && Icon ? 'p-2' : ''
 			)}
-			disabled={disabled}
+			disabled={disabled || loading}
 			{...props}
 		>
-			<>
-				{Icon && (
-					<Icon
-						size={16}
-						className={cn(content || children ? 'mr-2' : '')}
-					/>
-				)}
-				{content || children}
-			</>
+			{loading ? (
+				<Spinner size={8} />
+			) : (
+				<>
+					{Icon && (
+						<Icon
+							size={16}
+							className={cn(content || children ? 'mr-2' : '')}
+						/>
+					)}
+					{content || children}
+				</>
+			)}
 		</button>
 	);
 };

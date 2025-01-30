@@ -1,31 +1,30 @@
 'use client';
-
-import { useEffect, useRef } from 'react';
+import { JSX, useEffect, useRef } from 'react';
 
 const vertexShaderSrc = `
-  attribute vec2 position;
-  varying vec2 vUv;
-  void main() {
-    vUv = position * 0.5 + 0.5;
-    gl_Position = vec4(position, 0.0, 1.0);
-  }
+    attribute vec2 position;
+    varying vec2 vUv;
+    void main() {
+        vUv = position * 0.5 + 0.5;
+        gl_Position = vec4(position, 0.0, 1.0);
+	}
 `;
 
 const fragmentShaderSrc = `
-  precision highp float;
+    precision highp float;
 
-  uniform float time;
-  uniform vec2 resolution;
-  uniform vec3 color1;
-  uniform vec3 color2;
-  uniform vec3 color3;
-  uniform float noiseOpacity;
+    uniform float time;
+    uniform vec2 resolution;
+    uniform vec3 color1;
+    uniform vec3 color2;
+    uniform vec3 color3;
+    uniform float noiseOpacity;
 
-  float rand(vec2 co) {
-    return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);
-  }
+    float rand(vec2 co) {
+      return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);
+    }
 
-  float noise(vec2 p) {
+    float noise(vec2 p) {
     vec2 i = floor(p);
     vec2 f = fract(p);
     
@@ -39,9 +38,9 @@ const fragmentShaderSrc = `
     return mix(a, b, u.x) +
            (c - a) * u.y * (1.0 - u.x) +
            (d - b) * u.x * u.y;
-  }
+    }
 
-  void main() {
+    void main() {
     vec2 uv = gl_FragCoord.xy / resolution.xy;
     vec2 pos = uv * 3.0 + vec2(time * 0.1, time * 0.1);
     
@@ -53,9 +52,23 @@ const fragmentShaderSrc = `
     color += grain;
 
     gl_FragColor = vec4(color, 1.0);
-  }
+    }
 `;
 
+/**
+ * A component that renders a dynamic gradient background with noise and animation.
+ *
+ * @param {Object} props - The properties passed to the Gradient component.
+ * @param {string} [props.width='100vw'] - The width of the canvas.
+ * @param {string} [props.height='100vh'] - The height of the canvas.
+ * @param {number} [props.blur=0] - The amount of blur applied to the gradient.
+ * @param {number} [props.noiseOpacity=0.05] - The opacity of the noise applied to the gradient.
+ * @param {number} [props.speed=1.0] - The speed of the animation.
+ * @param {string[]} [props.colors=['#ff6b6b', '#feca57', '#1dd1a1']] - The colors used for the gradient.
+ * @param {string} [props.className=''] - Additional class names for custom styling.
+ *
+ * @returns {JSX.Element} The rendered gradient background component.
+ */
 export const Gradient = ({
 	width = '100vw',
 	height = '100vh',
@@ -64,7 +77,7 @@ export const Gradient = ({
 	speed = 1.0,
 	colors = ['#ff6b6b', '#feca57', '#1dd1a1'],
 	className = '',
-}) => {
+}: { width?: string; height?: string; blur?: number; noiseOpacity?: number; speed?: number; colors?: string[]; className?: string; }): JSX.Element => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 
 	useEffect(() => {

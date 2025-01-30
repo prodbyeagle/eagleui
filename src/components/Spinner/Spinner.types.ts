@@ -10,6 +10,7 @@ export interface SpinnerProps {
 	/**
 	 * Optional size of the spinner, represented as a number.
 	 * Defines the diameter of the spinner (e.g., in pixels).
+	 * The width of the spinner will be half of the size (e.g., size 30 will result in a width/height of 15 pixels).
 	 */
 	size?: number;
 
@@ -28,6 +29,7 @@ export interface SpinnerProps {
 	/**
 	 * Optional speed of the spinner's rotation.
 	 * A number representing the duration (in seconds) for one full rotation.
+	 * The higher the number, the slower the rotation.
 	 */
 	speed?: number;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import type { SpinnerProps } from './Spinner.types';
 
 export const Spinner: React.FC<SpinnerProps> = ({
@@ -8,8 +8,19 @@ export const Spinner: React.FC<SpinnerProps> = ({
 	strokeWidth = 3,
 	speed = 1.5,
 }) => {
+	const [isDarkMode, setIsDarkMode] = useState(false);
+
+	useEffect(() => {
+		const prefersDarkMode = window.matchMedia(
+			'(prefers-color-scheme: dark)'
+		).matches;
+		setIsDarkMode(prefersDarkMode);
+	}, []);
+
 	const radius = (size - strokeWidth) / 2;
 	const circumference = 2 * Math.PI * radius;
+
+	const spinnerColor = isDarkMode ? 'oklch(0.985 0 0)' : color;
 
 	return (
 		<svg
@@ -27,7 +38,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
 				cy={size / 2}
 				r={radius}
 				fill='none'
-				stroke={color}
+				stroke={spinnerColor}
 				strokeWidth={strokeWidth}
 				strokeLinecap='round'
 				strokeDasharray={circumference}
@@ -35,11 +46,11 @@ export const Spinner: React.FC<SpinnerProps> = ({
 			/>
 			<style>
 				{`
-					@keyframes spin {
-						0% { transform: rotate(0deg); }
-						100% { transform: rotate(360deg); }
-					}
-				`}
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}
 			</style>
 		</svg>
 	);

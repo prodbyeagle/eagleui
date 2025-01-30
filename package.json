@@ -4,10 +4,20 @@
 	"keywords": [
 		"ui",
 		"library",
-		"components"
+		"components",
+		"react",
+		"tailwindcss"
 	],
 	"author": "prodbyeagle",
-	"description": "A comprehensive UI library by @prodbyeagle",
+	"description": "A comprehensive UI library by @prodbyeagle, built with React and TailwindCSS for modern, reusable, and customizable components.",
+		"repository": {
+		"type": "git",
+		"url": "https://github.com/prodbyeagle/eagleui.git"
+	},
+	"bugs": {
+		"url": "https://github.com/prodbyeagle/eagleui/issues"
+	},
+	"homepage": "https://github.com/prodbyeagle/eagleui#readme",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
 	"types": "dist/types/index.d.ts",

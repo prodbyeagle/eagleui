@@ -14,7 +14,7 @@ EagleUI is a customizable and modern UI component library built with React and T
 To install EagleUI, you need to have Node.js and npm installed. Then, you can install the library using npm:
 
 ```bash
-npm install @prodbyeagle/preagle-ui
+npm install @prodbyeagle/eagle-ui
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ Here is an example of how to use the `Button` component from EagleUI:
 
 ```tsx
 import React from 'react';
-import { Button } from '@prodbyeagle/preagle-ui';
+import { Button } from '@prodbyeagle/eagle-ui';
 
 const App = () => {
 	return (
@@ -43,7 +43,7 @@ export default App;
 A customizable button component with different variants and sizes.
 
 ```tsx
-import { Button } from '@prodbyeagle/preagle-ui';
+import { Button } from '@prodbyeagle/eagle-ui';
 
 <Button variant='primary' size='md' content='Click Me' />;
 ```
@@ -53,7 +53,7 @@ import { Button } from '@prodbyeagle/preagle-ui';
 A flexible dialog component with customizable content, title, and styling.
 
 ```tsx
-import { Dialog } from '@prodbyeagle/preagle-ui';
+import { Dialog } from '@prodbyeagle/eagle-ui';
 
 <Dialog isOpen={true} onClose={() => {}} title='Dialog Title'>
 	<p>Dialog Content</p>
@@ -65,7 +65,7 @@ import { Dialog } from '@prodbyeagle/preagle-ui';
 A customizable input component with optional label, icon, and error message.
 
 ```tsx
-import { Input } from '@prodbyeagle/preagle-ui';
+import { Input } from '@prodbyeagle/eagle-ui';
 
 <Input label='Username' placeholder='Enter your username' />;
 ```
@@ -75,7 +75,7 @@ import { Input } from '@prodbyeagle/preagle-ui';
 A custom dropdown select component with an accessible and modern design.
 
 ```tsx
-import { Select } from '@prodbyeagle/preagle-ui';
+import { Select } from '@prodbyeagle/eagle-ui';
 
 const options = [
 	{ value: 'option1', label: 'Option 1' },

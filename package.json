@@ -1,6 +1,6 @@
 {
 	"name": "@prodbyeagle/eagle-ui",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"keywords": [
 		"ui",
 		"library",
@@ -10,7 +10,7 @@
 	],
 	"author": "prodbyeagle",
 	"description": "A comprehensive UI library by @prodbyeagle, built with React and TailwindCSS for modern, reusable, and customizable components.",
-		"repository": {
+	"repository": {
 		"type": "git",
 		"url": "https://github.com/prodbyeagle/eagleui.git"
 	},

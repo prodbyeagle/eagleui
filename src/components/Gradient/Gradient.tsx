@@ -77,7 +77,15 @@ export const Gradient = ({
 	speed = 1.0,
 	colors = ['#ff6b6b', '#feca57', '#1dd1a1'],
 	className = '',
-}: { width?: string; height?: string; blur?: number; noiseOpacity?: number; speed?: number; colors?: string[]; className?: string; }): JSX.Element => {
+}: {
+	width?: string;
+	height?: string;
+	blur?: number;
+	noiseOpacity?: number;
+	speed?: number;
+	colors?: string[];
+	className?: string;
+}): JSX.Element => {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 
 	useEffect(() => {

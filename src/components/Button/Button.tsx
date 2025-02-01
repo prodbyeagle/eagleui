@@ -1,4 +1,4 @@
-import React, { JSX, ReactNode } from 'react';
+import React, { JSX } from 'react';
 import { cn } from '../../lib/utils';
 import type { ButtonProps } from './Button.types';
 import { Spinner } from '../Spinner/Spinner';

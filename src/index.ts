@@ -1,4 +1,8 @@
+export { Avatar } from './components/Avatar/Avatar';
 export { Button } from './components/Button/Button';
+export { Badge } from './components/Badge/Badge';
+export { ButtonGroup } from './components/ButtonGroup/ButtonGroup';
+export { Card } from './components/Card/Card';
 export { Dialog } from './components/Dialog/Dialog';
 export { Gradient } from './components/Gradient/Gradient';
 export { Input } from './components/Input/Input';

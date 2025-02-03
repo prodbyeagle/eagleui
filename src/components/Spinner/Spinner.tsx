@@ -1,26 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { FC } from 'react';
 import type { SpinnerProps } from './Spinner.types';
 
-export const Spinner: React.FC<SpinnerProps> = ({
+export const Spinner: FC<SpinnerProps> = ({
 	className = '',
 	size = 48,
 	color = 'currentColor',
 	strokeWidth = 3,
 	speed = 1.5,
 }) => {
-	const [isDarkMode, setIsDarkMode] = useState(false);
-
-	useEffect(() => {
-		const prefersDarkMode = window.matchMedia(
-			'(prefers-color-scheme: dark)'
-		).matches;
-		setIsDarkMode(prefersDarkMode);
-	}, []);
-
 	const radius = (size - strokeWidth) / 2;
 	const circumference = 2 * Math.PI * radius;
 
-	const spinnerColor = isDarkMode ? 'oklch(0.985 0 0)' : color;
+	const spinnerColor = color;
 
 	return (
 		<svg

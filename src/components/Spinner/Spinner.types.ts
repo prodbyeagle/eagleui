@@ -23,6 +23,7 @@ export interface SpinnerProps {
 	/**
 	 * Optional stroke width of the spinner's circle.
 	 * A number representing the thickness of the spinner's outline.
+	 * Values above 8 are not recommended.
 	 */
 	strokeWidth?: number;
 

@@ -1,8 +1,20 @@
 import React, { useEffect, useState, JSX } from 'react';
 import { X } from 'lucide-react';
-import { cn } from '../../lib/utils';
+import { cn } from '../../lib/cn';
 import type { DialogProps } from './Dialog.types';
 
+/**
+ * A Dialog component that displays a modal with customizable content and behaviors.
+ *
+ * @param {boolean} isOpen - Determines if the dialog is open or closed.
+ * @param {Function} onClose - Callback function to close the dialog.
+ * @param {string} title - The title displayed at the top of the dialog.
+ * @param {React.ReactNode} children - The content displayed inside the dialog.
+ * @param {string} className - Optional additional classes for custom styling.
+ * @param {string} shadowSize - Optional size for the shadow applied to the dialog.
+ *
+ * @returns {JSX.Element | null} The rendered dialog or null if it is closed.
+ */
 export const Dialog: React.FC<DialogProps> = ({
 	isOpen,
 	onClose,

@@ -1,33 +1,16 @@
 import React from 'react';
+import { cn } from '@/lib/cn';
 import type { InputProps } from './Input.types';
 
 /**
- * A customizable input component with optional label, icon, and error message.
- *
- * @param {InputProps} props - The properties for the Input component.
- * @returns {JSX.Element} The rendered Input component.
- *
- * @example
- * ```tsx
- * <Input
- *   label="Username"
- *   placeholder="Enter your username"
- * />
- *
- * <Input
- *   label="Search"
- *   icon={SearchIcon}
- *   placeholder="Search for users"
- * />
- *
- * <Input
- *   label="Email"
- *   type="email"
- *   placeholder="Enter your email"
- *   error="Invalid email address"
- * />
- * ```
+ * A customizable input component that supports optional label, icon, and error message.
+ * @param {InputProps} props - The properties to configure the Input component.
+ * @param {string} [props.label] - The label displayed for the input.
+ * @param {React.ComponentType} [props.icon] - An optional icon to display inside the input.
+ * @param {string} [props.error] - An optional error message to display below the input.
+ * @param {string} [props.className] - Additional custom classes to apply to the component.
  */
+
 export const Input: React.FC<InputProps> = ({
 	label,
 	icon: Icon,
@@ -36,7 +19,7 @@ export const Input: React.FC<InputProps> = ({
 	...props
 }) => {
 	return (
-		<div className={`w-full ${className || ''}`}>
+		<div className={cn('w-full', className)}>
 			{label && (
 				<label
 					htmlFor={props.id || props.name}
@@ -53,18 +36,18 @@ export const Input: React.FC<InputProps> = ({
 				)}
 				<input
 					{...props}
-					className={`w-full h-10 pl-10 pr-4 py-2 text-base bg-neutral-100 border border-neutral-300 
-                    rounded-xl placeholder:text-neutral-500 text-neutral-900 focus:outline-hidden focus:ring-1 
-                    focus:ring-neutral-400 dark:bg-neutral-800 dark:border-neutral-700 dark:placeholder:text-neutral-500 
-                    dark:text-neutral-100 dark:focus:ring-neutral-400
-                    ${
+					className={cn(
+						'w-full h-10 pl-10 pr-4 py-2 text-base bg-neutral-100 border border-neutral-300',
+						'rounded-xl placeholder:text-neutral-500 text-neutral-900 focus:outline-hidden focus:ring-1',
+						'focus:ring-neutral-400 dark:bg-neutral-800 dark:border-neutral-700 dark:placeholder:text-neutral-500',
+						'dark:text-neutral-100 dark:focus:ring-neutral-400',
 						error
-							? 'border-red-500 focus:ring-red-500 focus:border-red-500 dark:focus:ring-red-500'
+							? 'focus:ring-red-400 dark:focus:ring-red-400'
 							: ''
-					}`}
+					)}
 				/>
 			</div>
-			{error && <p className='mt-2 text-sm text-red-500'>{error}</p>}
+			{error && <p className='mt-2 text-xs text-red-400'>{error}</p>}
 		</div>
 	);
 };

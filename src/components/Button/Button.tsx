@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import { cn } from '../../lib/utils';
+import { cn } from '../../lib/cn';
 import type { ButtonProps } from './Button.types';
 import { Spinner } from '../Spinner/Spinner';
 
@@ -15,7 +15,7 @@ export const Button: React.FC<ButtonProps> = ({
 	...props
 }: ButtonProps): JSX.Element => {
 	const baseStyles =
-		'inline-flex h-10 items-center justify-center font-medium active:scale-95 transition-all duration-300 rounded-xl disabled:opacity-60 disabled:pointer-events-none';
+		'inline-flex h-10 items-center justify-center font-medium active:scale-[.98] transition-all ease-in-out duration-200 rounded-xl disabled:opacity-60 disabled:pointer-events-none';
 
 	const variants = {
 		primary:
@@ -23,8 +23,10 @@ export const Button: React.FC<ButtonProps> = ({
 		secondary:
 			'bg-neutral-300 text-neutral-900 hover:bg-neutral-600/50 dark:bg-neutral-600 dark:text-neutral-100 dark:hover:bg-neutral-600/50',
 		ghost: 'bg-transparent text-neutral-900 hover:bg-neutral-400/50 dark:bg-transparent dark:text-neutral-100 dark:hover:bg-neutral-700/80',
-		border: 'border border-neutral-300 hover:border-transparent text-neutral-900 hover:bg-neutral-400/50 dark:border-neutral-700/50 dark:text-neutral-100 dark:hover:bg-neutral-700/50 duration-300',
-		danger: 'bg-red-400 text-neutral-100 hover:bg-red-500 dark:bg-red-500 dark:text-neutral-100 dark:hover:bg-red-500/80',
+		border: 'border border-neutral-300 hover:border-transparent text-neutral-900 hover:bg-neutral-400/50 dark:border-neutral-700/50 dark:text-neutral-100 dark:hover:bg-neutral-700/50',
+		danger: 'bg-red-400 text-neutral-900 hover:bg-red-300 dark:bg-red-500 dark:text-neutral-100 dark:hover:bg-red-600',
+		link: 'text-neutral-900 underline hover:text-neutral-600 dark:text-neutral-100 dark:hover:text-neutral-400',
+		shiny: 'border border-neutral-300 hover:border-transparent text-neutral-900 hover:bg-neutral-400/50 dark:border-neutral-700/50 dark:text-neutral-100 dark:hover:bg-neutral-700/50',
 	};
 
 	const sizes = {
@@ -33,6 +35,8 @@ export const Button: React.FC<ButtonProps> = ({
 		lg: 'px-5 py-3 text-lg',
 	};
 
+	const isShiny = variant === 'shiny';
+
 	return (
 		<button
 			className={cn(
@@ -40,23 +44,22 @@ export const Button: React.FC<ButtonProps> = ({
 				variants[variant],
 				sizes[size],
 				className,
-				!content && !children && Icon ? 'p-2' : ''
+				isShiny ? 'always-shiny' : ''
 			)}
 			disabled={disabled || loading}
 			{...props}
 		>
-			{loading ? (
-				<Spinner size={8} />
-			) : (
-				<>
-					{Icon && (
-						<Icon
-							size={16}
-							className={cn(content || children ? 'mr-2' : '')}
-						/>
-					)}
+			{loading && <Spinner size={18} />}
+			{Icon && (
+				<Icon
+					size={16}
+					className={cn(content || children ? 'mr-2' : '')}
+				/>
+			)}
+			{(content || children) && (
+				<span className={cn(loading ? 'ml-2' : '')}>
 					{content || children}
-				</>
+				</span>
 			)}
 		</button>
 	);

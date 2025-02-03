@@ -12,8 +12,19 @@ export interface ButtonProps
 	 * - 'ghost': A transparent button with borders.
 	 * - 'border': A button with a border but no background.
 	 * - 'danger': A button that typically indicates a destructive action.
+	 * - 'success': A button that represents a successful action.
+	 * - 'warning': A button that warns about a potential issue.
+	 * - 'link': A button styled like a link.
+	 * - 'shiny': A Shiny Button.
 	 */
-	variant?: 'primary' | 'secondary' | 'ghost' | 'border' | 'danger';
+	variant?:
+		| 'primary'
+		| 'secondary'
+		| 'ghost'
+		| 'border'
+		| 'danger'
+		| 'link'
+		| 'shiny';
 
 	/**
 	 * Specifies the size of the button.

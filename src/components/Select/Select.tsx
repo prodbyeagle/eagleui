@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, JSX } from 'react';
 import { ChevronDown, Check } from 'lucide-react';
-import { cn } from '@/lib/cn';
+import { cn } from '../../lib/cn';
 import type { SelectProps } from './Select.types';
 
 /**

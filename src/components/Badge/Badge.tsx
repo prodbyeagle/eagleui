@@ -1,5 +1,4 @@
-import React from 'react';
-import { cn } from '@/lib/cn';
+import { cn } from '../../lib/cn';
 import type { BadgeProps } from './Badge.types';
 
 export const Badge = ({

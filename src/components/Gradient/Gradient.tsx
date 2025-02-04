@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useRef } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { ShaderMaterial, Color, Vector2 } from 'three';
 import { debounce } from '../../lib/debounce';
+import type { GradientProps, ShaderPlaneProps } from './Gradient.types';
 
 const vertexShaderSrc = `
   varying vec2 vUv;
@@ -96,12 +97,15 @@ void main() {
 }
 `;
 
-const ShaderPlane: React.FC<{
-	speed: number;
-	colors: string[];
-	noiseOpacity: number;
-	warpIntensity: number;
-}> = ({ speed, colors, noiseOpacity, warpIntensity }) => {
+/**
+ * Creates the Shaderplane.
+ */
+const ShaderPlane: React.FC<ShaderPlaneProps> = ({
+	speed,
+	colors,
+	noiseOpacity,
+	warpIntensity,
+}) => {
 	const materialRef = useRef<ShaderMaterial>(null!);
 	const timeRef = useRef(0);
 	const { size, setSize } = useThree();
@@ -164,15 +168,10 @@ const ShaderPlane: React.FC<{
 	);
 };
 
-export const Gradient: React.FC<{
-	width?: string;
-	height?: string;
-	noiseOpacity?: number;
-	warpIntensity?: number;
-	speed?: number;
-	colors?: string[];
-	className?: string;
-}> = ({
+/**
+ * Creates an Gradient.
+ */
+export const Gradient: React.FC<GradientProps> = ({
 	width = '100vw',
 	height = '100vh',
 	noiseOpacity = 0.1,
@@ -181,14 +180,6 @@ export const Gradient: React.FC<{
 	colors = ['#ff6b6b', '#feca57', '#1dd1a1', '#ca9bee', '#8b64a8', '#523868'],
 	className = '',
 }) => {
-	console.log(
-		'[Gradient] Render with width:',
-		width,
-		'height:',
-		height,
-		'colors:',
-		colors
-	);
 	return (
 		<div
 			className={className}

@@ -10,14 +10,13 @@ import type { InputProps } from './Input.types';
  * @param {string} [props.error] - An optional error message to display below the input.
  * @param {string} [props.className] - Additional custom classes to apply to the component.
  */
-
 export const Input: React.FC<InputProps> = ({
 	label,
 	icon: Icon,
 	error,
 	className,
 	...props
-}) => {
+}: InputProps) => {
 	return (
 		<div className={cn('w-full', className)}>
 			{label && (

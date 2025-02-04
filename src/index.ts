@@ -6,4 +6,5 @@ export { Card } from './components/Card/Card';
 export { Dialog } from './components/Dialog/Dialog';
 export { Gradient } from './components/Gradient/Gradient';
 export { Input } from './components/Input/Input';
+export { Spinner } from './components/Spinner/Spinner';
 export { Select } from './components/Select/Select';

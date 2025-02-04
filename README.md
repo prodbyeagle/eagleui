@@ -1,98 +1,105 @@
-# EagleUI ( DOCS SOON! )
+# EagleUI 🦅
 
-EagleUI is a customizable and modern UI component library built with React and TailwindCSS. It provides a set of reusable components to help you build beautiful and consistent user interfaces quickly and efficiently. While the library is primarily designed for use on prodbyeagle's websites, it is open for use by others as well.
+EagleUI is a modern, customizable UI component library by [@prodbyeagle](https://github.com/prodbyeagle). Originally designed for prodbyeagle's websites, this library is open for everyone to use and contribute to.
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
-- **Customizable**: Easily customize the components to match your design system.
-- **Modern Design**: Built with modern design principles and best practices.
-- **Reusable Components**: A set of reusable components to speed up your development process.
-- **TypeScript Support**: Written in TypeScript for type safety and better developer experience.
+- **Customizable**: Easily tailor components to align with your design system.
+- **Modern Design**: Crafted with modern design principles and best practices.
+- **Reusable Components**: Speed up your development process with a suite of reusable components.
+- **TypeScript Support**: Written in TypeScript for enhanced type safety and developer experience.
 
 ## Installation
 
-To install EagleUI, you need to have Node.js and npm installed. Then, you can install the library using npm:
+Before you begin, ensure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) (or Yarn) installed.
 
-```bash
-npm install @prodbyeagle/eagle-ui
-```
+### Step-by-Step Installation
+
+1. **Using npm**
+
+   Open your terminal and run:
+
+   ```bash
+   npm install @prodbyeagle/eagle-ui
+   ```
+
+2. **Using Yarn**
+
+   If you prefer Yarn, run:
+
+   ```bash
+   yarn add @prodbyeagle/eagle-ui
+   ```
+
+3. **Verify Peer Dependencies**
+
+   Some components might rely on additional peer dependencies. Make sure to check the [documentation](#) or package details for any extra requirements.
 
 ## Usage
 
-Here is an example of how to use the `Button` component from EagleUI:
+Integrate EagleUI components into your Next.js project by importing them into your pages or components. Below is a simple example:
 
 ```tsx
+// pages/index.tsx
 import React from 'react';
 import { Button } from '@prodbyeagle/eagle-ui';
 
-const App = () => {
-	return (
-		<div>
-			<Button variant='primary' size='md' content='Click Me' />
-		</div>
-	);
+const Home: React.FC = () => {
+  return (
+    <div style={{ padding: '2rem', textAlign: 'center' }}>
+      <h1>Welcome to EagleUI</h1>
+      <p>Customize and build fast with our reusable components!</p>
+      <Button variant={border} onClick={() => alert('Button Clicked!')}>
+        Click Me
+      </Button>
+    </div>
+  );
 };
 
-export default App;
+export default Home;
 ```
 
-## Components
-
-### Button
-
-A customizable button component with different variants and sizes.
-
-```tsx
-import { Button } from '@prodbyeagle/eagle-ui';
-
-<Button variant='primary' size='md' content='Click Me' />;
-```
-
-### Dialog
-
-A flexible dialog component with customizable content, title, and styling.
-
-```tsx
-import { Dialog } from '@prodbyeagle/eagle-ui';
-
-<Dialog isOpen={true} onClose={() => {}} title='Dialog Title'>
-	<p>Dialog Content</p>
-</Dialog>;
-```
-
-### Input
-
-A customizable input component with optional label, icon, and error message.
-
-```tsx
-import { Input } from '@prodbyeagle/eagle-ui';
-
-<Input label='Username' placeholder='Enter your username' />;
-```
-
-### Select
-
-A custom dropdown select component with an accessible and modern design.
-
-```tsx
-import { Select } from '@prodbyeagle/eagle-ui';
-
-const options = [
-	{ value: 'option1', label: 'Option 1' },
-	{ value: 'option2', label: 'Option 2' },
-];
-
-<Select value='option1' onChange={(value) => {}} options={options} />;
-```
+This example demonstrates how to import a `Button` component and integrate it into your Next.js page with some basic inline styling.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request on GitHub.
+Contributions are welcome! To contribute:
+
+1. **Fork the repository.**
+2. **Create a new branch** for your feature or bug fix:
+
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+
+3. **Make your changes** and commit them with a descriptive message:
+
+   ```bash
+   git commit -m "Add feature: YourFeatureName"
+   ```
+
+4. **Push your branch** to your fork:
+
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+
+5. **Open a pull request** on GitHub to merge your changes.
+
+For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
-This project is licensed under the MIT License.
+EagleUI is open source and available under the [MIT License](LICENSE).
 
-## Author
+---
 
-Created by prodbyeagle.
+Happy coding! 🦅

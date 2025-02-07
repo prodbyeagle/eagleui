@@ -9,23 +9,23 @@ export const Badge = ({
 	const badgeVariants = {
 		primary: {
 			bg: 'bg-neutral-200 dark:bg-neutral-900',
-			text: 'text-neutral-800 dark:text-neutral-300',
+			text: 'text-neutral-900 dark:text-neutral-300',
 		},
 		secondary: {
 			bg: 'bg-neutral-300 dark:bg-neutral-700',
-			text: 'text-neutral-800 dark:text-neutral-300',
+			text: 'text-neutral-900 dark:text-neutral-300',
 		},
 		border: {
 			bg: 'bg-transparent border border-neutral-300 dark:border-neutral-700',
-			text: 'text-neutral-800 dark:text-neutral-300',
+			text: 'text-neutral-900 dark:text-neutral-300',
 		},
 		danger: {
 			bg: 'bg-red-100 dark:bg-red-900',
-			text: 'text-red-800 dark:text-red-300',
+			text: 'text-red-900 dark:text-red-300',
 		},
 		success: {
 			bg: 'bg-green-100 dark:bg-green-900',
-			text: 'text-green-800 dark:text-green-300',
+			text: 'text-green-900 dark:text-green-300',
 		},
 	};
 

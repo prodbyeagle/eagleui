@@ -63,7 +63,7 @@ export const Dialog: React.FC<DialogProps> = ({
 					isOpen ? 'dialog-enter' : 'dialog-exit',
 					'p-4 rounded-2xl',
 					shadowClass,
-					'bg-neutral-100 dark:bg-neutral-900 min-w-sm mx-5 relative transition-all duration-300 max-h-200 overflow-y-scroll border border-neutral-300 dark:border-neutral-800 max-w-200',
+					'bg-neutral-100 dark:bg-neutral-950 mx-5 relative transition-all duration-300 max-h-200 overflow-y-scroll border border-neutral-300 dark:border-neutral-800 min-w-md max-w-4xl',
 					className
 				)}
 			>
@@ -71,7 +71,7 @@ export const Dialog: React.FC<DialogProps> = ({
 					onClick={onClose}
 					className={cn(
 						'absolute top-4 right-4 text-neutral-900 dark:text-neutral-100 p-0 bg-transparent',
-						'hover:bg-neutral-200 hover:scale-105 dark:hover:bg-neutral-800',
+						'hover:bg-neutral-200 hover:scale-105 dark:hover:bg-neutral-900',
 						'transition-all duration-200 rounded-xs'
 					)}
 				>

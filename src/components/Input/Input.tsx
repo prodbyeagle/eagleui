@@ -36,9 +36,9 @@ export const Input: React.FC<InputProps> = ({
 				<input
 					{...props}
 					className={cn(
-						'w-full h-10 pl-10 pr-4 py-2 text-base bg-neutral-100 border border-neutral-300',
+						'w-full h-10 pl-10 pr-4 py-2 text-sm bg-neutral-100 border border-neutral-300',
 						'rounded-xl placeholder:text-neutral-500 text-neutral-900 focus:outline-hidden focus:ring-1',
-						'focus:ring-neutral-400 dark:bg-neutral-800 dark:border-neutral-700 dark:placeholder:text-neutral-500',
+						'focus:ring-neutral-400 dark:bg-neutral-950 dark:border-neutral-800 dark:placeholder:text-neutral-500',
 						'dark:text-neutral-100 dark:focus:ring-neutral-400',
 						error
 							? 'focus:ring-red-400 dark:focus:ring-red-400'

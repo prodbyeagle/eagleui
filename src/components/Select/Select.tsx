@@ -46,7 +46,7 @@ export const Select = <T extends string | number>({
 				type='button'
 				onClick={() => setIsOpen(!isOpen)}
 				className={cn(
-					'relative w-full h-full rounded-xl px-3 py-2 bg-neutral-100 border border-neutral-300 text-left text-sm transition-all duration-200 hover:ring-2 hover:ring-neutral-400/20 dark:bg-neutral-800 dark:border-neutral-700 dark:hover:ring-neutral-600/20',
+					'relative w-full h-full rounded-lg px-3 py-2 bg-neutral-100 border border-neutral-300 text-left text-sm transition-all duration-200 dark:bg-neutral-950 dark:border-neutral-800',
 					isOpen
 						? 'ring-2 ring-neutral-400/20 dark:ring-neutral-600/20'
 						: ''
@@ -75,7 +75,7 @@ export const Select = <T extends string | number>({
 			{isOpen && (
 				<div className='absolute z-10 w-full mt-2'>
 					<div className='relative'>
-						<div className='relative rounded-lg bg-neutral-100 dark:bg-neutral-800 p-1 shadow-2xl shadow-neutral-300 dark:shadow-neutral-950'>
+						<div className='relative border border-neutral-300 dark:border-neutral-800 rounded-lg bg-neutral-100 dark:bg-neutral-950 p-1'>
 							<ul className='max-h-60 overflow-auto'>
 								{options.map((option, index) => (
 									<li
@@ -87,8 +87,8 @@ export const Select = <T extends string | number>({
 										className={cn(
 											'relative cursor-pointer select-none rounded-md px-2.5 py-2 text-sm transition-colors duration-150',
 											option.value === value
-												? 'bg-neutral-200 text-neutral-700 dark:bg-neutral-900/20 dark:text-neutral-100'
-												: 'text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-700/50',
+												? 'bg-neutral-200 dark:bg-neutral-950 text-neutral-700 dark:border border-neutral-100 dark:border-neutral-800 dark:text-neutral-100'
+												: 'text-neutral-900 hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-900/50',
 											index === options.length - 1
 												? 'mb-0'
 												: 'mb-1'

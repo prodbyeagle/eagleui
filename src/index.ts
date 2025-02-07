@@ -8,3 +8,5 @@ export { Gradient } from './components/Gradient/Gradient';
 export { Input } from './components/Input/Input';
 export { Spinner } from './components/Spinner/Spinner';
 export { Select } from './components/Select/Select';
+export { Textarea } from './components/Textarea/Textarea';
+export { Slider } from './components/Slider/Slider';

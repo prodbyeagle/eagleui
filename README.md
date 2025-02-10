@@ -1,104 +1,93 @@
-# EagleUI 🦅
+# EagleUI 🦅  
 
-EagleUI is a modern, customizable UI component library by [@prodbyeagle](https://github.com/prodbyeagle). Originally designed for prodbyeagle's websites, this library is open for everyone to use and contribute to.
+EagleUI is a modern, flexible, and highly customizable UI component library by [@prodbyeagle](https://github.com/prodbyeagle). Originally built for prodbyeagle's own projects, it is now open for everyone to use and contribute to.  
 
-## Table of Contents
+## Table of Contents  
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Features](#features)  
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [Contributing](#contributing)  
+- [License](#license)  
 
-## Features
+## Features  
 
-- **Customizable**: Easily tailor components to align with your design system.
-- **Modern Design**: Crafted with modern design principles and best practices.
-- **Reusable Components**: Speed up your development process with a suite of reusable components.
-- **TypeScript Support**: Written in TypeScript for enhanced type safety and developer experience.
+- **Fully Customizable** – Tailor components to match your design system.  
+- **Modern & Minimalist** – Designed with Swiss-inspired aesthetics and best UX practices.  
+- **Reusable & Performant** – Speed up development with lightweight, optimized components.  
+- **TypeScript Support** – Built with TypeScript for safety and a great developer experience.  
 
-## Installation
+## Installation  
 
-Before you begin, ensure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) (or Yarn) installed.
+Ensure you have [Node.js](https://nodejs.org/) installed, along with your preferred package manager (`npm`, `pnpm`, or `yarn`).  
 
-### Step-by-Step Installation
+### Install via your package manager  
 
-1. **Using npm**
+```bash
+# npm
+npm install @prodbyeagle/eagle-ui
 
-   Open your terminal and run:
+# pnpm
+pnpm add @prodbyeagle/eagle-ui
 
-   ```bash
-   npm install @prodbyeagle/eagle-ui
-   ```
+# yarn
+yarn add @prodbyeagle/eagle-ui
+```  
 
-2. **Using Yarn**
+### Verify Peer Dependencies  
 
-   If you prefer Yarn, run:
+Some components may require additional peer dependencies. Check the [documentation](#) for details.  
 
-   ```bash
-   yarn add @prodbyeagle/eagle-ui
-   ```
+## Usage  
 
-3. **Verify Peer Dependencies**
-
-   Some components might rely on additional peer dependencies. Make sure to check the [documentation](#) or package details for any extra requirements.
-
-## Usage
-
-Integrate EagleUI components into your Next.js project by importing them into your pages or components. Below is a simple example:
+Import and use EagleUI components in your Next.js project:  
 
 ```tsx
-// pages/index.tsx
-import React from 'react';
 import { Button } from '@prodbyeagle/eagle-ui';
 
-const Home: React.FC = () => {
+export default function Home() {
   return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1>Welcome to EagleUI</h1>
-      <p>Customize and build fast with our reusable components!</p>
-      <Button variant={border} onClick={() => alert('Button Clicked!')}>
+    <div className="flex flex-col items-center justify-center p-8">
+      <h1 className="text-2xl font-semibold">Welcome to EagleUI</h1>
+      <p className="text-neutral-500">Customize and build fast with reusable components.</p>
+      <Button variant="border" onClick={() => alert('Button Clicked!')}>
         Click Me
       </Button>
     </div>
   );
-};
+}
+```  
 
-export default Home;
-```
+## Contributing  
 
-This example demonstrates how to import a `Button` component and integrate it into your Next.js page with some basic inline styling.
+We welcome contributions! To contribute:  
 
-## Contributing
-
-Contributions are welcome! To contribute:
-
-1. **Fork the repository.**
-2. **Create a new branch** for your feature or bug fix:
+1. **Fork the repository**  
+2. **Create a new branch**  
 
    ```bash
-   git checkout -b feature/YourFeatureName
-   ```
+   git checkout -b feature/your-feature-name
+   ```  
 
-3. **Make your changes** and commit them with a descriptive message:
-
-   ```bash
-   git commit -m "Add feature: YourFeatureName"
-   ```
-
-4. **Push your branch** to your fork:
+3. **Make changes and commit**  
 
    ```bash
-   git push origin feature/YourFeatureName
-   ```
+   git commit -m "Add: YourFeatureName"
+   ```  
 
-5. **Open a pull request** on GitHub to merge your changes.
+4. **Push your branch**  
 
-For major changes, please open an issue first to discuss what you would like to change.
+   ```bash
+   git push origin feature/your-feature-name
+   ```  
 
-## License
+5. **Open a pull request**  
 
-EagleUI is open source and available under the [MIT License](LICENSE).
+For major changes, please open an issue first to discuss your ideas.  
+
+## License  
+
+EagleUI is open source and available under the [MIT License](LICENSE).  
 
 ---
 
